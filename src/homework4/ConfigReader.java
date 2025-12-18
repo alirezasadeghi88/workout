@@ -1,4 +1,4 @@
-package homework3;
+package homework4;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -9,21 +9,18 @@ public class ConfigReader {
         Properties properties = new Properties();
 
         try {
-                FileInputStream fileInputStream = new FileInputStream("E:\\projects\\workout\\src\\homework\\db.properties");
+            FileInputStream fileInputStream = new FileInputStream("E:\\projects\\workout\\src\\homework\\db.properties");
             properties.load(fileInputStream);
 
             String dbUrl = properties.getProperty("db.url");
             String dbUser = properties.getProperty("db.user");
             String dbPassword = properties.getProperty("db.password");
 
-            System.out.println("Url:" + dbUrl);
-            System.out.println("User:" + dbUser);
-            System.out.println("Password:" + dbPassword);
-        } catch (
+            System.out.println("URL :" + dbUrl);
+            System.out.println("USER :" + dbUser);
+            System.out.println("PASSWORD :" + dbPassword);
 
-
-
-                Exception e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
