@@ -87,6 +87,10 @@ public class PhoneBookManager {
                     String phone = scanner.nextLine();
                     manager.addContact(id,name, phone);
                     break;
+
+                case 2:
+                    manager.showAllContacts();
+                    break;
             }
         }
     }
