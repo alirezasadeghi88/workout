@@ -16,5 +16,18 @@ public class PhoneBookManager {
         }
     }
 
-  }
+    public void showAllContacts() {
+        try(BufferedReader bufferedReader = new BufferedReader(new FileReader(FILE_PATH))) {
+            String line;
+            System.out.println("\nAll contacts:");
+            while ((line = bufferedReader.readLine())!= null);
+            String[] parts = line.split(",");
+            int id = Integer.parseInt(parts[0]);
+            String name = parts[1];
+            String phone = parts[2];
+            System.out.println("ID: " + id + " | Name: " + name + " | Phone: " + phone);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
