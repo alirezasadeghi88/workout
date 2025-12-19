@@ -3,6 +3,7 @@ package homework;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.Scanner;
 
 public class PhoneBookManager {
     private static final String FILE_PATH = "contacts.txt";
@@ -56,6 +57,25 @@ public class PhoneBookManager {
 
         if (!found){
             System.out.println("No contact found with ID: " + searchId);
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        PhoneBookManager manager = new PhoneBookManager();
+
+        while (true) {
+            System.out.println("\n--- PhoneBook Menu ---");
+            System.out.println("1. Add Contact");
+            System.out.println("2. Show All Contacts");
+            System.out.println("3. Search Contact by ID");
+            System.out.println("4. Exit");
+            System.out.print("Choose option: ");
+            int choice =  Integer.parseInt(scanner.nextLine());
+
+         }
         }
     }
 }
