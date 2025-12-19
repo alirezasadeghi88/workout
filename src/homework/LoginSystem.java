@@ -11,11 +11,11 @@ public class LoginSystem {
 
         // رشته اتصال به دیتابیس PostgreSQL
         // ساختار: jdbc:postgresql://host:port/database
-        String url = "jdbc:postgresql://localhost:5432/testdb";
+        String url = "jdbc:postgresql://localhost:5432/test2";
         // نام کاربری دیتابیس
         String user = "postgres";
         // رمز عبور دیتابیس
-        String pass = "1234";
+        String pass = "postgres";
 
         // اتصال به دیتابیس با استفاده از DriverManager
         // try-with-resources باعث می‌شود Connection بعد از پایان کار خودکار بسته شود
