@@ -91,6 +91,15 @@ public class PhoneBookManager {
                 case 2:
                     manager.showAllContacts();
                     break;
+
+                case 3:
+                    System.out.println("Enter ID to search: ");
+                    int searchId = Integer.parseInt(scanner.nextLine());
+                    manager.searchById(searchId);
+                    break;
+
+                case 4:
+                    System.out.println("Goodbye!");
             }
         }
     }
