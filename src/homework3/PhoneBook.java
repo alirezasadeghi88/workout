@@ -1,9 +1,6 @@
-package homework;
+package homework3;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 public class PhoneBook {
@@ -13,23 +10,24 @@ public class PhoneBook {
 
         FileWriter fileWriter = new FileWriter("contacts.txt",true);
 
-        System.out.print("Enter name :");
+        System.out.print("NAME :");
         String name = scanner.nextLine();
-
-        System.out.print("Enter phone :");
+        System.out.print("PHONE :");
         String phone = scanner.nextLine();
 
-        fileWriter.write(name + "," + phone + "\n");
+        fileWriter.write(name + " , " + phone + "\n");
         fileWriter.close();
 
-                System.out.println("Contacts saved!");
+        System.out.println("Contacts saved!");
 
         BufferedReader bufferedReader = new BufferedReader(new FileReader("contacts.txt"));
         String line;
         System.out.println("All contacts :");
-        while ((line = bufferedReader.readLine()) != null) {
+
+        while ((line = bufferedReader.readLine())!=null){
             System.out.println(line);
         }
+
         bufferedReader.close();
     }
 }
