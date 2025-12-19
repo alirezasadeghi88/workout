@@ -75,7 +75,19 @@ public class PhoneBookManager {
             System.out.print("Choose option: ");
             int choice =  Integer.parseInt(scanner.nextLine());
 
-         }
+            switch (choice){
+                case 1:
+                    System.out.print("ENTER ID :");
+                    int id = Integer.parseInt(scanner.nextLine());
+
+                    System.out.print("ENTER NAME :");
+                    String name = scanner.nextLine();
+
+                    System.out.print("ENTER PHONE :");
+                    String phone = scanner.nextLine();
+                    manager.addContact(id,name, phone);
+                    break;
+            }
         }
     }
 }
