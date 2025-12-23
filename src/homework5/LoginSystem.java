@@ -3,6 +3,7 @@ package homework5;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.Scanner;
 
 public class LoginSystem {
@@ -25,10 +26,17 @@ public class LoginSystem {
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM users WHERE username = ? AND password = ?");
 
             preparedStatement.setString(1,username);
-            preparedStatement.setString(2,password);
+            preparedStatement.setString(2,pwd);
 
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                System.out.println("Login successful !");
+            }else {
+                System.out.println("Invalid credentials.");
+            }
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
 
     }
