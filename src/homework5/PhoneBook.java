@@ -16,5 +16,10 @@ public class PhoneBook {
 
         System.out.println("ENTER PHONE :");
         String phone = scanner.nextLine();
+
+        fileWriter.write(name + " , " + phone);
+        fileWriter.close();
+
+        System.out.println("Contacts saved !");
     }
 }
