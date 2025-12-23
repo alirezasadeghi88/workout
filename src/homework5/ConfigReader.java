@@ -19,7 +19,7 @@ public class ConfigReader {
             System.out.println("URL :" + dbUrl);
             System.out.println("USER :" + dbUser);
             System.out.println("PASSWORD :" + dbPassword);
-
+    
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
