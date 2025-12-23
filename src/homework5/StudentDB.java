@@ -2,6 +2,7 @@ package homework5;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class StudentDB {
@@ -18,6 +19,10 @@ public class StudentDB {
                     "id SERIAL PRIMARY KEY, " +
                     "name VARCHAR(50) NOT NULL, " +
                     "age INT)");
+            statement.executeUpdate("INSERT INTO students(name,age)VALEUS(Ali,20)");
+
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM students");
+
 
         } catch (Exception e) {
             throw new RuntimeException(e);
