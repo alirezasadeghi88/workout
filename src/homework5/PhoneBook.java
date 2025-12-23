@@ -10,5 +10,11 @@ public class PhoneBook {
         Scanner scanner = new Scanner(System.in);
 
         FileWriter fileWriter = new FileWriter("contacts.txt", true);
+
+        System.out.println("ENTER NAME :");
+        String name = scanner.nextLine();
+
+        System.out.println("ENTER PHONE :");
+        String phone = scanner.nextLine();
     }
 }
