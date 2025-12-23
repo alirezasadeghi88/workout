@@ -14,6 +14,11 @@ public class StudentDB {
         try(Connection connection = DriverManager.getConnection(url,user,password)) {
             Statement statement = connection.createStatement();
 
+            statement.executeUpdate("CREATE TABLE IF NOT EXISTS students " +
+                    "id SERIAL PRIMARY KEY, " +
+                    "name VARCHAR(50) NOT NULL, " +
+                    "age INT)");
+
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
