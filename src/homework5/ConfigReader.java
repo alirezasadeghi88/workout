@@ -11,6 +11,12 @@ public class ConfigReader {
         try {
             FileInputStream fileInputStream = new FileInputStream("E:\\projects\\workout\\src\\homework\\db.properties");
             properties.load(fileInputStream);
+
+            String dbUrl = properties.getProperty("db.url");
+            String dbUser = properties.getProperty("db.user");
+            String dbPassword = properties.getProperty("db.password");
+
+
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
