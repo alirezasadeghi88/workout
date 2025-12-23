@@ -1,5 +1,7 @@
 package homework5;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
@@ -21,5 +23,13 @@ public class PhoneBook {
         fileWriter.close();
 
         System.out.println("Contacts saved !");
+        BufferedReader bufferedReader = new BufferedReader(new FileReader("contacts.txt"));
+        String line;
+
+        while ((line = bufferedReader.readLine())!=null) {
+            System.out.println(line);
+        }
+
+        bufferedReader.close();
     }
 }
