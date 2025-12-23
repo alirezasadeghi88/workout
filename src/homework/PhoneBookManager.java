@@ -29,7 +29,7 @@ public class PhoneBookManager {
                 System.out.println("ID: " + id + " | Name: " + name + " | Phone: " + phone);
             }
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 
@@ -52,7 +52,7 @@ public class PhoneBookManager {
                 }
             }
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
 
         if (!found){
@@ -100,6 +100,9 @@ public class PhoneBookManager {
 
                 case 4:
                     System.out.println("Goodbye!");
+
+                default:
+                    System.out.println("Invalid choice. Please try again.");
             }
         }
     }
