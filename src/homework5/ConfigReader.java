@@ -8,6 +8,11 @@ public class ConfigReader {
 
         Properties properties = new Properties();
 
-
+        try {
+            FileInputStream fileInputStream = new FileInputStream("E:\\projects\\workout\\src\\homework\\db.properties");
+            properties.load(fileInputStream);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }
