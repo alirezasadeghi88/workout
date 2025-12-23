@@ -2,6 +2,7 @@ package homework5;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.util.Scanner;
 
 public class LoginSystem {
@@ -20,6 +21,12 @@ public class LoginSystem {
 
             System.out.println("PASSWORD :");
             String pwd = scanner.nextLine();
+
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM users WHERE username = ? AND password = ?");
+
+            preparedStatement.setString(1,username);
+            preparedStatement.setString(2,password);
+
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
