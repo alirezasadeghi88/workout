@@ -15,15 +15,19 @@ public class StudentDB {
         try(Connection connection = DriverManager.getConnection(url,user,password)) {
             Statement statement = connection.createStatement();
 
-            statement.executeUpdate("CREATE TABLE IF NOT EXISTS students " +
+            statement.executeUpdate( "CREATE TABLE IF NOT EXISTS students (" +
                     "id SERIAL PRIMARY KEY, " +
                     "name VARCHAR(50) NOT NULL, " +
                     "age INT)");
-            statement.executeUpdate("INSERT INTO students(name,age)VALEUS(Ali,20)");
+            statement.executeUpdate("INSERT INTO students(name,age) VALUES('Ali',20)");
 
             ResultSet resultSet = statement.executeQuery("SELECT * FROM students");
 
-
+            while (resultSet.next()) {
+                System.out.println(resultSet.getInt("id") + " _ " +
+                        resultSet.getString("name") + " _ " +
+                        resultSet.getInt("age"));
+            }
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
