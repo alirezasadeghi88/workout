@@ -16,6 +16,9 @@ public class ConfigReader {
             String dbUser = properties.getProperty("db.user");
             String dbPassword = properties.getProperty("db.password");
 
+            System.out.println("URL :" + dbUrl);
+            System.out.println("USER :" + dbUser);
+            System.out.println("PASSWORD :" + dbPassword);
 
         } catch (Exception e) {
             throw new RuntimeException(e);
